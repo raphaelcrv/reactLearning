@@ -1,17 +1,44 @@
-const title = "Title Hello World"
-const desc = "Desc Hello World "
+function Header() {
+	return (
+			<header>
+				<h1>Score Board</h1>
+				<span className="stats">Players (1)</span>
+			</header>
+	);
+}
 
-const myTitleId = 'main-title';
-
-const header = (
-    <header>
-        <h1 id={myTitleId}>{title}</h1>,
-        <p>{desc}</p>
-    </header>
-
+const Counter = () =>{
+return (
+	<div className="counter">
+	<button className="counter-action decrement"> - </button>
+	<span className="counter-score">35</span>
+	<button className="counter-action increment"> +</button>
+</div>
 )
+}
+
+const Players = () =>{
+	return (
+		<div className="player">
+		<span className="player-name">
+			Guil
+		</span>
+		<Counter></Counter>
+
+		</div>
+	)
+}
+
+const App = () => {
+	return (
+		<div className="scoreboard">
+			<Header />
+			<Players />
+		</div>
+	)
+}
 
 ReactDOM.render(
-    header,
-    document.getElementById("root")
+	<App />,
+	document.getElementById("root")
 )
